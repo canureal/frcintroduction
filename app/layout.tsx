@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import "./globals.css";
 import Navbar from "./components/ui/Navbar";
 import { Providers } from "./components/ui/Providers";
+import SmoothScroll from "./components/ui/SmoothScroll";
 import { Noto_Sans, Playfair_Display } from "next/font/google";
 import { cn } from "@/lib/utils";
 
@@ -31,10 +32,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={cn("h-full", "antialiased", "smooth-scroll", departureMono.variable, "font-sans", notoSans.variable, playfairDisplayHeading.variable)} suppressHydrationWarning>
         <body className="min-h-full flex flex-col font-sans overflow-x-clip">
             <Providers>
-                <Navbar />
-                <main className="flex-1 w-full min-w-0 overflow-x-clip">
-                    {children}
-                </main>
+                <SmoothScroll>
+                    <Navbar />
+                    <main className="flex-1 w-full min-w-0 overflow-x-clip">
+                        {children}
+                    </main>
+                </SmoothScroll>
             </Providers>
         </body>
     </html>
