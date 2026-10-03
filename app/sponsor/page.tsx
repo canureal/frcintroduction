@@ -1,4 +1,4 @@
-import { siInstagram } from 'simple-icons'
+import { SiInstagram } from 'react-icons/si'
 import Button from '../components/ui/Button'
 import VideoCarousel from '../components/ui/VideoCarousel'
 
@@ -16,8 +16,8 @@ export default function SponsorPage() {
             <section className="flex items-center justify-start flex-row gap-4 md:gap-8">
                 {buttons.map((but) => {
                     return (
-                        <Button key={but.title} href={but.href}>
-                            {but.title}
+                        <Button className='flex-row flex gap-4' key={but.title} href={but.href}>
+                            <SiInstagram className='w-4 h-4'/> {but.title}
                         </Button>
                     )
                 })}

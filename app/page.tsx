@@ -50,6 +50,12 @@ export default function Home() {
               <p className="text-sm text-zinc-500">Team ALAZ</p>
               <SocialLinks />
             </div>
+
+            <div aria-hidden="true" className='mx-auto max-w-7xl select-none px-6 leading-none'>
+              <p className='translate-y-[12%] text-center text-[22vw] font-bold tracking-tighter text-red-500 md:text-[18vw]'>
+                  ALAZ
+              </p>
+            </div>
           </footer>
       </div>
   );
