@@ -3,6 +3,12 @@ import localFont from 'next/font/local';
 import "./globals.css";
 import Navbar from "./components/ui/Navbar";
 import { Providers } from "./components/ui/Providers";
+import { Noto_Sans, Playfair_Display } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const playfairDisplayHeading = Playfair_Display({subsets:['latin'],variable:'--font-heading'});
+
+const notoSans = Noto_Sans({subsets:['latin'],variable:'--font-sans'});
 
 const departureMono = localFont({
   src: "../DepartureMono-1.500/DepartureMono-Regular.woff2",
@@ -17,15 +23,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${departureMono.variable} h-full antialiased`} suppressHydrationWarning>
+    <html lang="en" className={cn("h-full", "antialiased", "smooth-scroll", departureMono.variable, "font-sans", notoSans.variable, playfairDisplayHeading.variable)} suppressHydrationWarning>
         <body className="min-h-full flex flex-col font-sans">
             <Providers>
                 <Navbar />
                 <main className="flex-1">
                     {children}
                 </main>
-            </Providers>        
+            </Providers>
         </body>
-    </html>    
+    </html>
   );
 }
