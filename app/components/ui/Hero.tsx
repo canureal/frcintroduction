@@ -34,7 +34,7 @@ export default function Hero() {
   );
 
   return (
-    <section ref={root} className="relative min-h-svh w-full overflow-hidden">
+    <section ref={root} id="top" className="relative min-h-svh w-full overflow-hidden">
       <video
         className="absolute inset-0 h-full w-full object-cover"
         src="/hero.mp4"

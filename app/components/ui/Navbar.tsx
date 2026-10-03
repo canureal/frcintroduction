@@ -8,7 +8,7 @@ import { ThemeToggle } from "./ThemeToggle";
 export default function Navbar() {
     const [open, setOpen] = useState(false);
     const nav_links = [
-        { label: 'Main page', href: '/#' },
+        { label: 'Main page', href: '/#top' },
         { label: 'About us', href: '#aboutus'},
         { label: 'Our robot', href: '#robot'},
         { label: 'Us', href: '#us'},
