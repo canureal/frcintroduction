@@ -1,4 +1,5 @@
 import { Cpu,  LucideIcon, Megaphone, Wrench } from "lucide-react";
+import Reveal from "./Reveal";
 
 
 export default function AboutUsCards() {
@@ -17,9 +18,9 @@ export default function AboutUsCards() {
   return (
     <>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {cards.map(({ title, description, icon: Icon }) => (
+        {cards.map(({ title, description, icon: Icon }, i) => (
+          <Reveal key={title} delay={i * 0.1}>
           <div
-            key={title}
             className="rounded-2xl border border-zinc-700 p-6 transition-colors hover:border-red-500 dark:border-amber-300 dark:hover:border-red-600"
           >
             <div className="mb-4 inline-flex rounded-lg bg-zinc-800 p-3 dark:bg-amber-300">
@@ -28,6 +29,7 @@ export default function AboutUsCards() {
             <h3 className="text-xl font-semibold text-amber-200 dark:text-zinc-900">{title}</h3>
             <p className="mt-2 text-sm text-zinc-400 dark:text-zinc-700">{description}</p>
           </div>
+          </Reveal>
         ))}
       </div>
     </>
