@@ -32,9 +32,16 @@ export default function Navbar() {
                 <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 md:py-4">
                     <Link
                         href={"/"}
-                        className="min-h-[44px] inline-flex items-center shrink-0"
+                        className="min-h-[44px] inline-flex items-center gap-2 shrink-0"
                         onClick={() => setOpen(false)}
                     >
+                        <img
+                            src="/favicon.ico"
+                            alt=""
+                            width={32}
+                            height={32}
+                            className="h-8 w-8 rounded-full object-cover"
+                        />
                         <span className="text-red-500 dark:text-red-700">TeamALAZ</span>
                     </Link>
 
