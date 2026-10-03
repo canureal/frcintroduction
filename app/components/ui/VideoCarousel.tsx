@@ -38,7 +38,7 @@ export default function VideoCarousel() {
   ]
 
   return (
-    <Carousel setApi={setApi} opts={{ loop: true }}>
+    <Carousel setApi={setApi} opts={{ loop: true }} className="w-full">
       <CarouselContent>
         {videos.map((v, i) => (
           <CarouselItem key={v.src}>
@@ -51,13 +51,13 @@ export default function VideoCarousel() {
               loop
               controls
               preload="metadata"
-              className="w-full rounded-xl"
+              className="w-full max-w-full aspect-video rounded-xl object-cover max-h-[70svh]"
             />
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="left-4" />
-      <CarouselNext className="right-4" />
+      <CarouselPrevious className="left-2 sm:left-4 h-11 w-11 sm:h-8 sm:w-8" />
+      <CarouselNext className="right-2 sm:right-4 h-11 w-11 sm:h-8 sm:w-8" />
     </Carousel>
   );
 }
